@@ -14,7 +14,7 @@ Use the main file, tools/train.py, with the address of the config file:
 ```bash
  python tools/train.py --cfg configs/cifar100/kd/resnet32x4_resnet8x4.yaml
   ```
-If you want to use [Logit Standardization](https://github.com/sunshangquan/logit-standardization-KD/tree/master), add use the following
+If you want to use [Logit Standardization](https://github.com/sunshangquan/logit-standardization-KD/tree/master), use the following:
  ```bash
  python tools/train.py --cfg configs/cifar100/kd/resnet32x4_resnet8x4.yaml --logit-stand --base-temp 2 --kd-weight 9
   ```

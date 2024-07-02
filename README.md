@@ -21,15 +21,16 @@ If you want to use [Logit Standardization](https://github.com/sunshangquan/logit
 Supported Algorithms:
 |Method|Paper Link|
 |:---:|:---:|
-|KD| <https://arxiv.org/abs/1503.02531> |
-|AT| <https://arxiv.org/abs/1612.03928> |
-|NST| <https://arxiv.org/abs/1707.01219> |
-|PKT| <https://arxiv.org/abs/1803.10837> |
-|KDSVD| <https://arxiv.org/abs/1807.06819> |
-|OFD| <https://arxiv.org/abs/1904.01866> |
-|RKD| <https://arxiv.org/abs/1904.05068> |
-|VID| <https://arxiv.org/abs/1904.05835> |
-|SP| <https://arxiv.org/abs/1907.09682> |
-|CRD| <https://arxiv.org/abs/1910.10699> |
-|ReviewKD| <https://arxiv.org/abs/2104.09044> |
+|LSTD| <https://sunsean21.github.io/logit-stand-KD.html> |
 |DKD| <https://arxiv.org/abs/2203.08679> |
+|ReviewKD| <https://arxiv.org/abs/2104.09044> |
+|CRD| <https://arxiv.org/abs/1910.10699> |
+|SP| <https://arxiv.org/abs/1907.09682> |
+|VID| <https://arxiv.org/abs/1904.05835> |
+|RKD| <https://arxiv.org/abs/1904.05068> |
+|OFD| <https://arxiv.org/abs/1904.01866> |
+|KDSVD| <https://arxiv.org/abs/1807.06819> |
+|PKT| <https://arxiv.org/abs/1803.10837> |
+|NST| <https://arxiv.org/abs/1707.01219> |
+|AT| <https://arxiv.org/abs/1612.03928> |
+|KD| <https://arxiv.org/abs/1503.02531> |

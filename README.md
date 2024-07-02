@@ -11,6 +11,6 @@ Simply add  'MULTITEACHER: True' to the distiller config and define other teache
 - mdistiller/models: has different model, i.e. mobilenet, resnet, shufflenet, VGG.
 ## How to Run
 Use the main file, tools/train.py, with the address of the config file:
-'''
+```bash
  python tools/train.py --cfg configs/cifar100/kd/resnet32x4_resnet8x4.yaml
-'''
+  ```

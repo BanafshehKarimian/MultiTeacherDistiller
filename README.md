@@ -12,5 +12,5 @@ Simply add  'MULTITEACHER: True' to the distiller config and define other teache
 ## How to Run
 Use the main file, tools/train.py, with the address of the config file:
 '''
-python tools/train.py --cfg configs/cifar100/kd/resnet32x4_resnet8x4.yaml
+ python tools/train.py --cfg configs/cifar100/kd/resnet32x4_resnet8x4.yaml
 '''

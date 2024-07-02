@@ -18,7 +18,7 @@ If you want to use [Logit Standardization](https://github.com/sunshangquan/logit
  ```bash
  python tools/train.py --cfg configs/cifar100/kd/resnet32x4_resnet8x4.yaml --logit-stand --base-temp 2 --kd-weight 9
   ```
-Supported Algorithms:
+## Supported Algorithms
 |Method|Paper Link|
 |:---:|:---:|
 |LSTD| <https://sunsean21.github.io/logit-stand-KD.html> |

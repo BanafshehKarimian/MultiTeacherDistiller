@@ -5,7 +5,14 @@ from torchvision import datasets, transforms
 from torch.utils.data import ConcatDataset
 from PIL import ImageOps, ImageEnhance, ImageDraw, Image
 import random
+import torch
+def seed_worker(worker_id):
+    worker_seed = torch.initial_seed() % 2**32
+    np.random.seed(worker_seed)
+    random.seed(worker_seed)
 
+g = torch.Generator()
+g.manual_seed(0)
 
 def get_data_folder():
     data_folder = os.path.join(os.path.dirname(os.path.abspath(__file__)), "../../data")
@@ -365,13 +372,13 @@ def get_cifar100_dataloaders(batch_size, val_batch_size, num_workers):
     )
 
     train_loader = DataLoader(
-        train_set, batch_size=batch_size, shuffle=True, num_workers=num_workers
+        train_set, batch_size=batch_size, shuffle=True, num_workers=num_workers, worker_init_fn=seed_worker, generator=g,
     )
     test_loader = DataLoader(
         test_set,
         batch_size=val_batch_size,
         shuffle=False,
-        num_workers=1,
+        num_workers=1,worker_init_fn=seed_worker, generator=g,
     )
     return train_loader, test_loader, num_data
 
@@ -389,13 +396,13 @@ def get_cifar100_dataloaders_strong(batch_size, val_batch_size, num_workers):
     )
 
     train_loader = DataLoader(
-        train_set, batch_size=batch_size, shuffle=True, num_workers=num_workers
+        train_set, batch_size=batch_size, shuffle=True, num_workers=num_workers,worker_init_fn=seed_worker, generator=g,
     )
     test_loader = DataLoader(
         test_set,
         batch_size=val_batch_size,
         shuffle=False,
-        num_workers=1,
+        num_workers=1,worker_init_fn=seed_worker, generator=g,
     )
     return train_loader, test_loader, num_data
 
@@ -419,13 +426,13 @@ def get_cifar100_dataloaders_trainval(batch_size, val_batch_size, num_workers):
     )
 
     train_loader = DataLoader(
-        trainval_set, batch_size=batch_size, shuffle=True, num_workers=num_workers
+        trainval_set, batch_size=batch_size, shuffle=True, num_workers=num_workers, worker_init_fn=seed_worker, generator=g,
     )
     test_loader = DataLoader(
         test_set,
         batch_size=val_batch_size,
         shuffle=False,
-        num_workers=1,
+        num_workers=1, worker_init_fn=seed_worker, generator=g,
     )
     return train_loader, test_loader, num_data
 
@@ -442,13 +449,13 @@ def get_cifar100_dataloaders_val_only(batch_size, val_batch_size, num_workers):
     )
 
     train_loader = DataLoader(
-        train_set, batch_size=batch_size, shuffle=True, num_workers=num_workers
+        train_set, batch_size=batch_size, shuffle=True, num_workers=num_workers, worker_init_fn=seed_worker, generator=g,
     )
     test_loader = DataLoader(
         test_set,
         batch_size=val_batch_size,
         shuffle=False,
-        num_workers=1,
+        num_workers=1, worker_init_fn=seed_worker, generator=g,
     )
     return train_loader, test_loader, num_data
 
@@ -465,13 +472,13 @@ def get_cifar100_dataloaders_train_only(batch_size, val_batch_size, num_workers)
     )
 
     train_loader = DataLoader(
-        train_set, batch_size=batch_size, shuffle=True, num_workers=num_workers
+        train_set, batch_size=batch_size, shuffle=True, num_workers=num_workers, worker_init_fn=seed_worker, generator=g,
     )
     test_loader = DataLoader(
         test_set,
         batch_size=val_batch_size,
         shuffle=False,
-        num_workers=1,
+        num_workers=1, worker_init_fn=seed_worker, generator=g,
     )
     return train_loader, test_loader, num_data
 
@@ -499,12 +506,12 @@ def get_cifar100_dataloaders_sample(
     )
 
     train_loader = DataLoader(
-        train_set, batch_size=batch_size, shuffle=True, num_workers=num_workers
+        train_set, batch_size=batch_size, shuffle=True, num_workers=num_workers, worker_init_fn=seed_worker, generator=g,
     )
     test_loader = DataLoader(
         test_set,
         batch_size=val_batch_size,
         shuffle=False,
-        num_workers=num_workers,
+        num_workers=num_workers, worker_init_fn=seed_worker, generator=g,
     )
     return train_loader, test_loader, num_data

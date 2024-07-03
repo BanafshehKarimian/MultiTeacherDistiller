@@ -4,7 +4,7 @@ import torch
 import torch.nn as nn
 import torch.backends.cudnn as cudnn
 
-cudnn.benchmark = True
+cudnn.benchmark = False#True
 
 from mdistiller.models import cifar_model_dict, imagenet_model_dict
 from mdistiller.distillers import distiller_dict
